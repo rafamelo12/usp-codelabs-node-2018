@@ -2,7 +2,6 @@
   "name": "codelabs",
   "version": "1.0.0",
   "description": "Repo for USP Codelabs Node.js + Typescript talk",
-  "main": "dist/index.js",
   "author": "Rafael Melo",
   "license": "MIT",
   "scripts": {
