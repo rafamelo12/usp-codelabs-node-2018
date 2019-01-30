@@ -1,10 +1,8 @@
 
 
 const userId = 1;
-getUserData
+getUserData(userId)
 .then(getUserActiveCart)
 .then(getUserCartItemsData)
 .then(checkoutCartItems)
 .catch(error)
-
-
