@@ -18,8 +18,10 @@ mongoose.connect('mongodb://localhost:27017/usp_codelabs_express', { useNewUrlPa
 
 const router = express.Router();
 
-router.get('/', (_, res) => res.send('USP Codelabs! :)'));
-router.get('/list', showAll);
+router.get('/', function (req, res) {
+  res.send('USP Codelabs! :)')
+});
+router.get('/lists', showAll);
 router.post('/list', createList);
 
 app.use(router);

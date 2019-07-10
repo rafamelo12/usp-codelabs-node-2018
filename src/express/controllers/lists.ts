@@ -1,7 +1,6 @@
 import { List } from '../models';
 import { Request, Response } from 'express';
 import { IList, IListModel } from '../models';
-import { Mongoose } from 'mongoose';
 
 export const showAll = (_: Request, res: Response) => {
   List.find({}, (err, lists) => {

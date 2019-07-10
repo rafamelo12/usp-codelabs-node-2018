@@ -3,8 +3,12 @@ import { ParameterizedContext } from 'koa';
 
 export const showAll = async (ctx: ParameterizedContext) => {
   try {
-    ctx.body = await List.find({});
+    const lists = await List.find({});
+    ctx.body = {
+      lists
+    }
   } catch (err) {
+    ctx.status = 500;
     ctx.body = err;
   }
 }
@@ -18,6 +22,7 @@ export const createList = async (ctx: ParameterizedContext) => {
     });
     ctx.body = newList;
   } catch (err) {
+    ctx.status = 500;
     ctx.body = err;
   }
 }

@@ -8,14 +8,14 @@ const app = new Koa();
 const router = new Router();
 const PORT: number = 8000;
 
-mongoose.connect('mongodb://localhost:27017/usp_codelabs', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/usp_codelabs_koa', { useNewUrlParser: true });
 
 app.use(BodyParser());
 
 router.get('/', async ctx => {
   ctx.body = 'USP Codelabs! :)';
 });
-router.get('/list', showAll);
+router.get('/lists', showAll);
 router.post('/list', createList);
 
 app.use(router.routes());

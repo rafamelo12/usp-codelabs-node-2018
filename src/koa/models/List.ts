@@ -10,9 +10,13 @@ export interface IListModel extends IList, Document {
   createdAt: Date
 }
 
-export const ListSchema = new Schema({
+export const ListSchema: Schema<IListModel> = new Schema({
   title: String,
   content: String,
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 export const List: Model<IListModel> = model<IListModel>('List', ListSchema);
